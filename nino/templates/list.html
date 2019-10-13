@@ -1,0 +1,10 @@
+<a href="{% url 'nino:create' %}">Nuevo</a>
+
+
+<ul>
+    {% for Area_Medica in object_list %}
+        <li> <a href=" {% url 'nino:detail' Area_Medica.id %} "> {{Area_Medica.nino}}  </a> </li>
+    {% empty %}
+        <li>No hay productos.</li>
+    {% endfor %}
+ </ul>

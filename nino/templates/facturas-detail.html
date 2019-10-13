@@ -1,0 +1,19 @@
+<h1>{{ factura.nombre }}</h1>
+<p>{{ factura.nit }}</p>
+<p>{{ factura.direccion }}</p>
+<p>{{ factura.fecha }}</p>
+<h4> {{ factura.total }}</h4>
+<br>
+<h3>Detalle</h3>
+
+<ul>
+    {% for producto in detalle %}
+        <li>{{ producto.producto }} - {{ producto.cantidad }} - {{ producto.precio  }}</li>
+    {% endfor %}
+</ul>
+<br>
+<a href="{% url 'tienda:factura-update' factura.id %}">Actualizar</a>
+<br>
+<a href="{% url 'tienda:factura-index' %}">Todas las facturas</a>
+<br>
+<a href="{% url 'tienda:factura-delete' factura.id %}">Eliminar</a>

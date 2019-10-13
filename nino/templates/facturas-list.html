@@ -1,0 +1,8 @@
+<a href="{% url 'tienda:factura-create' %}">Nuevo</a>
+<ul>
+    {% for factura in object_list %}
+        <li><a href="{% url 'tienda:factura-detail' factura.id %}">{{factura.nombre}}</a> - {{ factura.nit }} - {{ factura.fecha }}</li>
+    {% empty %}
+        <li>No hay productos.</li>
+    {% endfor %}
+</ul>
